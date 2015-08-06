@@ -53,6 +53,7 @@
     "merge-stream": "^0.1.6",
     "minimist": "^1.1.0",
     "mkdirp": "^0.5.0",
+    "parachute": "^1.0.0-beta.2",
     "prompt-sync": "^1.0.0",
     "q": "^1.0.1",
     "stream-series": "^0.1.1",

@@ -1,0 +1,6 @@
+{
+  "git@github.com:crowdtap/assets.shared": {
+    "groups": ["bundle-bs3", "less-globals", "less-bs-3"],
+    "root": "src/core"
+  }
+}
