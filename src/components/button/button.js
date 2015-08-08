@@ -61,7 +61,8 @@ angular
  *  </md-button>
  * </hljs>
  */
-function MdButtonDirective($timeout) {
+function MdButtonDirective($mdButtonInkRipple, $mdTheming, $mdAria, $timeout) {
+
   return {
     restrict: 'EA',
     replace: true,
@@ -82,8 +83,13 @@ function MdButtonDirective($timeout) {
 
   function postLink(scope, element, attr) {
     var node = element[0];
+    $mdTheming(element);
+    $mdButtonInkRipple.attach(scope, element);
 
     var elementHasText = node.textContent.trim();
+    if (!elementHasText) {
+      $mdAria.expect(element, 'aria-label');
+    }
 
     // For anchor elements, we have to set tabindex manually when the
     // element is disabled
@@ -114,4 +120,5 @@ function MdButtonDirective($timeout) {
       })
       .on('blur', function() { element.removeClass('md-focused'); });
   }
+
 }
