@@ -24,7 +24,7 @@ exports.task = function() {
   var streams = [];
   var baseVars = fs.readFileSync('src/core/style/variables.scss', 'utf8').toString();
   gutil.log("Building css files...");
-  
+
   // create SCSS file for distribution
   streams.push(
     gulp.src(paths)
@@ -33,7 +33,7 @@ exports.task = function() {
       .pipe(concat('angular-material.scss'))
       .pipe(gulp.dest(dest))
   );
-  
+
   streams.push(
       gulp.src(paths)
           .pipe(util.filterNonCodeFiles())
@@ -48,6 +48,7 @@ exports.task = function() {
           .pipe(rename({extname: '.min.css'}))
           .pipe(gulp.dest(dest))
   );
+
   streams.push(
       gulp.src(config.scssStandaloneFiles)
           .pipe(insert.prepend(baseVars))
@@ -57,6 +58,7 @@ exports.task = function() {
           .pipe(rename({prefix: 'angular-material-'}))
           .pipe(gulp.dest(path.join(dest, 'modules', 'css')))
   );
+
   return series(streams);
   function getPaths () {
     var paths = config.scssBaseFiles.slice();

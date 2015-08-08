@@ -35,6 +35,8 @@ function(SERVICES, COMPONENTS, DEMOS, PAGES, $routeProvider, $mdThemingProvider)
     .when('/getting-started', {
       templateUrl: 'partials/getting-started.tmpl.html'
     });
+
+
   $mdThemingProvider.definePalette('docs-blue', $mdThemingProvider.extendPalette('blue', {
       '50':   '#DCEFFF',
       '100':  '#AAD1F9',
@@ -50,6 +52,7 @@ function(SERVICES, COMPONENTS, DEMOS, PAGES, $routeProvider, $mdThemingProvider)
       'contrastDarkColors': '50 100 200 A100',
       'contrastStrongLightColors': '300 400 A200 A400'
   }));
+
   $mdThemingProvider.definePalette('docs-red', $mdThemingProvider.extendPalette('red', {
     'A100': '#DE3641'
   }));
@@ -119,18 +122,6 @@ function(SERVICES, COMPONENTS, DEMOS, PAGES, $routeProvider, $mdThemingProvider)
   $routeProvider.otherwise('/');
 }])
 
-.config(['AngularyticsProvider', function(AngularyticsProvider) {
-   AngularyticsProvider.setEventHandlers(['Console', 'GoogleUniversal']);
-}])
-
-.run([
-   'Angularytics',
-   '$rootScope',
-    '$timeout',
-function(Angularytics, $rootScope,$timeout) {
-  Angularytics.init();
-}])
-
 .factory('menu', [
   'SERVICES',
   'COMPONENTS',
@@ -165,58 +156,6 @@ function(SERVICES, COMPONENTS, DEMOS, PAGES, $location, $rootScope, $http, $wind
   });
 
   sections.push();
-
-  sections.push({
-    name: 'Customization',
-    type: 'heading',
-    children: [
-      {
-        name: 'CSS',
-        type: 'toggle',
-        pages: [{
-            name: 'Typography',
-            url: '/CSS/typography',
-            type: 'link'
-          },
-          {
-            name : 'Button',
-            url: '/CSS/button',
-            type: 'link'
-          },
-          {
-            name : 'Checkbox',
-            url: '/CSS/checkbox',
-            type: 'link'
-          }]
-      },
-      {
-        name: 'Theming',
-        type: 'toggle',
-        pages: [
-          {
-            name: 'Introduction and Terms',
-            url: '/Theming/01_introduction',
-            type: 'link'
-          },
-          {
-            name: 'Declarative Syntax',
-            url: '/Theming/02_declarative_syntax',
-            type: 'link'
-          },
-          {
-            name: 'Configuring a Theme',
-            url: '/Theming/03_configuring_a_theme',
-            type: 'link'
-          },
-          {
-            name: 'Multiple Themes',
-            url: '/Theming/04_multiple_themes',
-            type: 'link'
-          }
-        ]
-      }
-    ]
-  });
 
   var docsByModule = {};
   var apiDocs = {};
@@ -440,69 +379,17 @@ function(SERVICES, COMPONENTS, DEMOS, PAGES, $location, $rootScope, $http, $wind
   };
 })
 
-.directive('menuToggle', [ '$timeout', function($timeout) {
-  return {
-    scope: {
-      section: '='
-    },
-    templateUrl: 'partials/menu-toggle.tmpl.html',
-    link: function($scope, $element) {
-      var controller = $element.parent().controller();
-      var $ul = $element.find('ul');
-      var originalHeight;
-
-      $scope.isOpen = function() {
-        return controller.isOpen($scope.section);
-      };
-      $scope.toggle = function() {
-        controller.toggleOpen($scope.section);
-      };
-      $scope.$watch(
-          function () {
-            return controller.isOpen($scope.section);
-          },
-          function (open) {
-            var $ul = $element.find('ul');
-            var targetHeight = open ? getTargetHeight() : 0;
-            $timeout(function () {
-              $ul.css({ height: targetHeight + 'px' });
-            }, 0, false);
-
-            function getTargetHeight () {
-              var targetHeight;
-              $ul.addClass('no-transition');
-              $ul.css('height', '');
-              targetHeight = $ul.prop('clientHeight');
-              $ul.css('height', 0);
-              $ul.removeClass('no-transition');
-              return targetHeight;
-            }
-          }
-      );
-
-
-      var parentNode = $element[0].parentNode.parentNode.parentNode;
-      if(parentNode.classList.contains('parent-list-item')) {
-        var heading = parentNode.querySelector('h2');
-        $element[0].firstChild.setAttribute('aria-describedby', heading.id);
-      }
-    }
-  };
-}])
-
 .controller('DocsCtrl', [
   '$scope',
   'COMPONENTS',
   'BUILDCONFIG',
-  '$mdSidenav',
   '$timeout',
-  '$mdDialog',
   'menu',
   '$location',
   '$rootScope',
   '$window',
   '$log',
-function($scope, COMPONENTS, BUILDCONFIG, $mdSidenav, $timeout, $mdDialog, menu, $location, $rootScope, $window, $log) {
+function($scope, COMPONENTS, BUILDCONFIG, $timeout, menu, $location, $rootScope, $window, $log) {
   var self = this;
 
   $scope.COMPONENTS = COMPONENTS;
@@ -511,8 +398,6 @@ function($scope, COMPONENTS, BUILDCONFIG, $mdSidenav, $timeout, $mdDialog, menu,
 
   $scope.path = path;
   $scope.goHome = goHome;
-  $scope.openMenu = openMenu;
-  $scope.closeMenu = closeMenu;
   $scope.isSectionSelected = isSectionSelected;
 
   $rootScope.$on('$locationChangeSuccess', openPage);
@@ -543,14 +428,6 @@ function($scope, COMPONENTS, BUILDCONFIG, $mdSidenav, $timeout, $mdDialog, menu,
   // Internal methods
   // *********************
 
-  function closeMenu() {
-    $timeout(function() { $mdSidenav('left').close(); });
-  }
-
-  function openMenu() {
-    $timeout(function() { $mdSidenav('left').open(); });
-  }
-
   function path() {
     return $location.path();
   }
@@ -561,8 +438,6 @@ function($scope, COMPONENTS, BUILDCONFIG, $mdSidenav, $timeout, $mdDialog, menu,
   }
 
   function openPage() {
-    $scope.closeMenu();
-
     if (self.autoFocusContent) {
       focusMainContent();
       self.autoFocusContent = false;
@@ -697,6 +572,7 @@ function($rootScope, $scope, component, demos, $http, $templateCache, $q) {
     return (!value) ? '' : value.replace(/ /g, '');
   };
 })
+
 .filter('humanizeDoc', function() {
   return function(doc) {
     if (!doc) return;
