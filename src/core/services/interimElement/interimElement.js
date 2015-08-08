@@ -54,7 +54,7 @@ function InterimElementProvider() {
      */
     provider.addPreset('build', {
       methods: ['controller', 'controllerAs', 'resolve',
-        'template', 'templateUrl', 'transformTemplate', 'parent']
+        'template', 'templateUrl', 'themable', 'transformTemplate', 'parent']
     });
 
     return provider;
@@ -220,7 +220,7 @@ function InterimElementProvider() {
 
   /* @ngInject */
   function InterimElementFactory($document, $q, $rootScope, $timeout, $rootElement, $animate,
-                                 $interpolate, $mdCompiler, $log ) {
+                                 $interpolate, $mdCompiler, $mdTheming, $log ) {
     var startSymbol = $interpolate.startSymbol(),
         endSymbol = $interpolate.endSymbol(),
         usesStandardSymbols = ((startSymbol === '{{') && (endSymbol === '}}')),
@@ -482,6 +482,7 @@ function InterimElementProvider() {
           // Search for parent at insertion time, if not specified
           options.element = element;
           options.parent = findParent(element, options);
+          if (options.themable) $mdTheming(element);
 
           return element;
         }
@@ -606,5 +607,7 @@ function InterimElementProvider() {
       if (!text || !angular.isString(text)) return text;
       return text.replace(/\{\{/g, startSymbol).replace(/}}/g, endSymbol);
     }
+
   }
+
 }

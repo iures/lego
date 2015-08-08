@@ -609,8 +609,10 @@ describe('$$interimElement service', function() {
     module('material.core', function($provide) {
       var $mdCompiler = { compile: angular.noop };
       $compilerSpy = spyOn($mdCompiler, 'compile');
+      $themingSpy = jasmine.createSpy('$mdTheming');
 
       $provide.value('$mdCompiler', $mdCompiler);
+      $provide.value('$mdTheming', $themingSpy);
     });
     inject(function($q, $compile, _$rootScope_, _$animate_, _$timeout_) {
       $rootScope = _$rootScope_;

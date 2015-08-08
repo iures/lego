@@ -1,8 +1,8 @@
 {
   "git@github.com:crowdtap/assets.shared": {
     "only": [
-      { "build/assets.shared.bs3.js": "dist" },
-      { "build/assets.shared.bs3.css": "dist" }
+      { "build/assets.shared.bs3.js": "dist/" },
+      { "build/assets.shared.bs3.css": "dist/" }
     ]
   }
 }

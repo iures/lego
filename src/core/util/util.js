@@ -7,7 +7,7 @@
 var nextUniqueId = 0;
 
 angular.module('material.core')
-  .factory('$mdUtil', function ($cacheFactory, $document, $timeout, $q, $compile, $window, $mdConstant, $$rAF, $rootScope) {
+  .factory('$mdUtil', function ($cacheFactory, $document, $timeout, $q, $compile, $window, $mdConstant, $$rAF, $rootScope, $$mdAnimate) {
     var $mdUtil = {
           dom : { },
           now: window.performance ?
@@ -261,6 +261,23 @@ angular.module('material.core')
             };
           },
 
+          // Returns a function that can only be triggered every `delay` milliseconds.
+          // In other words, the function will not be called unless it has been more
+          // than `delay` milliseconds since the last call.
+          throttle: function throttle(func, delay) {
+            var recent;
+            return function throttled() {
+              var context = this;
+              var args = arguments;
+              var now = $mdUtil.now();
+
+              if (!recent || (now - recent > delay)) {
+                func.apply(context, args);
+                recent = now;
+              }
+            };
+          },
+
           /**
            * Measures the number of milliseconds taken to run the provided callback
            * function. Uses a high-precision timer if available.
@@ -420,6 +437,9 @@ angular.module('material.core')
         };
 
     // Instantiate other namespace utility methods
+
+    $mdUtil.dom.animator = $$mdAnimate($mdUtil);
+
     return $mdUtil;
 
     function getNode(el) {
