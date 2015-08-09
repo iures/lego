@@ -238,11 +238,11 @@ exports.buildModuleBower = function(name, version) {
     if (moduleInfo.module) {
       var bowerDeps = {};
       (moduleInfo.dependencies || []).forEach(function(dep) {
-        var convertedName = 'angular-material-' + dep.split('.').pop();
+        var convertedName = 'crowdtap-ct-' + dep.split('.').pop();
         bowerDeps[convertedName] = version;
       });
       var bowerContents = JSON.stringify({
-        name: 'angular-material-' + name,
+        name: 'crowdtap-ct-' + name,
         version: version,
         dependencies: bowerDeps
       }, null, 2);
@@ -257,7 +257,7 @@ exports.buildModuleBower = function(name, version) {
   });
 };
 
-exports.hoistScssVariables = function() {
+exports.hoistLessVariables = function() {
   return through2.obj(function(file, enc, next) {
     var contents = file.contents.toString().split('\n');
     var lastVariableLine = -1;

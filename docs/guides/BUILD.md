@@ -55,8 +55,8 @@ See the [Building the Live Documentation](../README.md#docs) document for detail
 Developers can build the entire Angular Material library or individual component modules. The
 library comprises:
 
-* `angular-material.js` - components
-* `angular-material.css` - styles and default theme stylesheet
+* `crowdtap-ct.js` - components
+* `crowdtap-ct.css` - styles and default theme stylesheet
 * `/themes/**.css` - default theme override stylesheets
 
 To build from the source, simply use:
@@ -64,16 +64,16 @@ To build from the source, simply use:
 ```bash
 # Build and deploy the library to
 #
-# - `dist/angular-material.js`
-# - `dist/angular-material.css`
+# - `dist/crowdtap-ct.js`
+# - `dist/crowdtap-ct.css`
 # - `dist/themes`
 
 gulp build
 
 # Build minified assets
 #
-# - `dist/angular-material.min.js`
-# - `dist/angular-material.min.css`
+# - `dist/crowdtap-ct.min.js`
+# - `dist/crowdtap-ct.min.css`
 # - `dist/themes`
 
 gulp build --release
@@ -88,10 +88,10 @@ Change to your project's root directory.
 
 ```bash
 # To get the latest stable version, use Bower from the command line.
-bower install angular-material
+bower install crowdtap-ct
 
 # To get the most recent, latest committed-to-master version use:
-bower install angular-material#master
+bower install crowdtap-ct#master
 ```
 
 Visit [Bower-Material](https://github.com/angular/bower-material/blob/master/README.md) for more

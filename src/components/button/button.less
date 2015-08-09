@@ -1,0 +1,43 @@
+@button-line-height: 3.60 * @baseFontSize;
+@button-padding: 0 (0.600 * @baseFontSize);
+@button-margin: (0.600 * @baseFontSize) (0.800 * @baseFontSize);
+@button-min-width: (8.800 * @baseFontSize);
+
+.ct-button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  color: currentColor;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  .font-size(@body-font-size-base);
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: 500;
+  line-height: @button-line-height;
+  margin: @button-margin;
+  min-height: @button-line-height;
+  min-width: @button-min-width;
+  outline: none;
+  overflow: hidden;   // for ink containment
+  padding: @button-padding;
+  position: relative; //for child absolute-positioned <canvas>
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.ct-btn:hover {
+  background-color: #02bad6;
+}
+
+.ct-btn:active {
+  background-color: #00a8c2;
+  -webkit-transform: translate(0px, 1px);
+  -ms-transform: translate(0px, 1px);
+  transform: translate(0px, 1px);
+}

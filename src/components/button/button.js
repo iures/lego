@@ -77,8 +77,8 @@ function MdButtonDirective($mdButtonInkRipple, $mdTheming, $mdAria, $timeout) {
 
   function getTemplate(element, attr) {
     return isAnchor(attr) ?
-           '<a class="md-button" ng-transclude></a>' :
-           '<button class="md-button" ng-transclude></button>';
+           '<a class="ct-button" ng-transclude></a>' :
+           '<button class="ct-button" ng-transclude></button>';
   }
 
   function postLink(scope, element, attr) {

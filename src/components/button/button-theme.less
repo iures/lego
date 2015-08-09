@@ -1,10 +1,10 @@
-$button-border-radius: 3px !default;
-$button-fab-border-radius: 50% !default;
-$button-icon-border-radius: $button-fab-border-radius;
+@button-border-radius: 3px !default;
+@button-fab-border-radius: 50% !default;
+@button-icon-border-radius: @button-fab-border-radius;
 
 a.md-button.md-THEME_NAME-theme,
 .md-button.md-THEME_NAME-theme {
-  border-radius: $button-border-radius;
+  border-radius: @button-border-radius;
 
   &:not([disabled]) {
     &:hover {
@@ -19,7 +19,7 @@ a.md-button.md-THEME_NAME-theme,
   }
 
   &.md-fab {
-    border-radius: $button-fab-border-radius;
+    border-radius: @button-fab-border-radius;
     background-color: '{{accent-color}}';
     color: '{{accent-contrast}}';
     md-icon {
@@ -36,7 +36,7 @@ a.md-button.md-THEME_NAME-theme,
   }
 
   &.md-icon-button {
-    border-radius: $button-icon-border-radius;
+    border-radius: @button-icon-border-radius;
   }
 
   &.md-primary {
@@ -64,7 +64,7 @@ a.md-button.md-THEME_NAME-theme,
     }
   }
   &.md-fab {
-    border-radius: $button-fab-border-radius;
+    border-radius: @button-fab-border-radius;
     background-color: '{{accent-color}}';
     color: '{{accent-contrast}}';
     &:not([disabled]) {

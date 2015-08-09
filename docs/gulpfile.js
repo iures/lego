@@ -110,7 +110,7 @@ gulp.task('docs-demo-scripts', ['demos'], function() {
 });
 
 gulp.task('docs-js-dependencies', ['build'], function() {
-  return gulp.src(['dist/angular-material.js','dist/angular-material.min.js'])
+  return gulp.src(['dist/crowdtap-ct.js','dist/crowdtap-ct.min.js'])
     .pipe(gulp.dest('dist/docs'));
 });
 
@@ -125,7 +125,7 @@ gulp.task('docs-js', ['docs-app', 'docs-html2js', 'demos', 'build', 'docs-js-dep
 });
 
 gulp.task('docs-css-dependencies', ['build'], function() {
-                                                       return gulp.src(['dist/angular-material.css','dist/angular-material.min.css'])
+                                                       return gulp.src(['dist/crowdtap-ct.css','dist/crowdtap-ct.min.css'])
                                                        .pipe(gulp.dest('dist/docs'));
                                                        });
 
