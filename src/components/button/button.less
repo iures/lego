@@ -4,15 +4,16 @@
 @button-min-width: (8.800 * @baseFontSize);
 
 .ct-button {
+  .font-size(@body-font-size-base);
   align-items: center;
   background: transparent;
+  border-radius: 4px;
   border: 0;
   box-sizing: border-box;
   color: currentColor;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
-  .font-size(@body-font-size-base);
   font-style: inherit;
   font-variant: inherit;
   font-weight: 500;
@@ -21,21 +22,19 @@
   min-height: @button-line-height;
   min-width: @button-min-width;
   outline: none;
-  overflow: hidden;   // for ink containment
   padding: @button-padding;
   position: relative; //for child absolute-positioned <canvas>
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   user-select: none;
   white-space: nowrap;
 }
 
-.ct-btn:hover {
-  background-color: #02bad6;
-}
+/* .ct-btn:hover { */
+  /* background-color: #02bad6; */
+/* } */
 
-.ct-btn:active {
+.ct-button:active {
   background-color: #00a8c2;
   -webkit-transform: translate(0px, 1px);
   -ms-transform: translate(0px, 1px);

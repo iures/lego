@@ -32,7 +32,6 @@ module.exports = function(config) {
   var dependencies = process.env.KARMA_TEST_JQUERY ? ['node_modules/jquery/dist/jquery.js'] : [];
       dependencies = dependencies.concat([
         'node_modules/angular/angular.js',
-        'node_modules/angular-animate/angular-animate.js',
         'node_modules/angular-aria/angular-aria.js',
         'node_modules/angular-mocks/angular-mocks.js',
         'test/crowdtap-ct-mocks.js',

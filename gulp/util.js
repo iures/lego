@@ -182,6 +182,7 @@ function themeBuildStream() {
   return gulp.src( config.themeBaseFiles.concat(path.join(config.paths, '*-theme.less')) )
       .pipe(concat('default-theme.less'))
       .pipe(utils.hoistLessVariables())
+      .pipe(gulp.dest(config.outputDir))
       .pipe(less())
       .pipe(utils.cssToNgConstant('material.core', '$MD_THEME_CSS'));
 }

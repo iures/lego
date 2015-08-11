@@ -40,7 +40,6 @@ exports.task = function() {
           .pipe(util.filterNonCodeFiles())
           .pipe(filter(['**', '!**/*-theme.less']))
           .pipe(concat('crowdtap-ct.less'))
-          .pipe(gulp.dest(dest))
           .pipe(less())
           .pipe(rename({ basename: filename }))
           .pipe(util.autoprefix())

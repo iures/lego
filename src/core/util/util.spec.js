@@ -1,9 +1,8 @@
 describe('util', function() {
   beforeEach(module('material.core'));
 
-  var $rootScope, $timeout, $$mdAnimate;
-  beforeEach( inject(function(_$animate_,_$rootScope_,_$timeout_) {
-      $animate = _$animate_;
+  var $rootScope, $timeout;
+  beforeEach( inject(function(_$rootScope_,_$timeout_) {
       $rootScope = _$rootScope_;
       $timeout = _$timeout_;
   }));
@@ -121,7 +120,6 @@ describe('util', function() {
 
   function flush() {
     $rootScope.$digest();
-    $animate.triggerCallbacks();
     $timeout.flush();
   }
 });

@@ -24,17 +24,11 @@ function MdConstantFactory($sniffer) {
     CSS: {
       /* Constants */
       TRANSITIONEND: 'transitionend' + (webkit ? ' webkitTransitionEnd' : ''),
-      ANIMATIONEND: 'animationend' + (webkit ? ' webkitAnimationEnd' : ''),
 
       TRANSFORM: vendorProperty('transform'),
       TRANSFORM_ORIGIN: vendorProperty('transformOrigin'),
       TRANSITION: vendorProperty('transition'),
       TRANSITION_DURATION: vendorProperty('transitionDuration'),
-      ANIMATION_PLAY_STATE: vendorProperty('animationPlayState'),
-      ANIMATION_DURATION: vendorProperty('animationDuration'),
-      ANIMATION_NAME: vendorProperty('animationName'),
-      ANIMATION_TIMING: vendorProperty('animationTimingFunction'),
-      ANIMATION_DIRECTION: vendorProperty('animationDirection')
     },
     MEDIA: {
       'sm': '(max-width: 599px)',

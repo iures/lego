@@ -6,7 +6,6 @@
   },
   "devDependencies": {
     "angular": "^1.4.0",
-    "angular-animate": "^1.4.0",
     "angular-aria": "^1.4.0",
     "angular-messages": "^1.4.0",
     "angular-mocks": "^1.4.0",

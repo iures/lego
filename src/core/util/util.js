@@ -7,7 +7,7 @@
 var nextUniqueId = 0;
 
 angular.module('material.core')
-  .factory('$mdUtil', function ($cacheFactory, $document, $timeout, $q, $compile, $window, $mdConstant, $$rAF, $rootScope, $$mdAnimate) {
+  .factory('$mdUtil', function ($cacheFactory, $document, $timeout, $q, $compile, $window, $mdConstant, $$rAF, $rootScope) {
     var $mdUtil = {
           dom : { },
           now: window.performance ?
@@ -437,8 +437,6 @@ angular.module('material.core')
         };
 
     // Instantiate other namespace utility methods
-
-    $mdUtil.dom.animator = $$mdAnimate($mdUtil);
 
     return $mdUtil;
 

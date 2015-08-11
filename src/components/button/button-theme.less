@@ -2,8 +2,8 @@
 @button-fab-border-radius: 50% !default;
 @button-icon-border-radius: @button-fab-border-radius;
 
-a.md-button.md-THEME_NAME-theme,
-.md-button.md-THEME_NAME-theme {
+a.ct-button.md-THEME_NAME-theme,
+.ct-button.md-THEME_NAME-theme {
   border-radius: @button-border-radius;
 
   &:not([disabled]) {
@@ -13,69 +13,20 @@ a.md-button.md-THEME_NAME-theme,
     &.md-focused {
       background-color: '{{background-500-0.2}}';
     }
-    &.md-icon-button:hover {
-      background-color: transparent;
-    }
-  }
-
-  &.md-fab {
-    border-radius: @button-fab-border-radius;
-    background-color: '{{accent-color}}';
-    color: '{{accent-contrast}}';
-    md-icon {
-      color: '{{accent-contrast}}';
-    }
-    &:not([disabled]) {
-      &:hover {
-        background-color: '{{accent-color}}';
-      }
-      &.md-focused {
-        background-color: '{{accent-A700}}';
-      }
-    }
-  }
-
-  &.md-icon-button {
-    border-radius: @button-icon-border-radius;
   }
 
   &.md-primary {
     color: '{{primary-color}}';
-    &.md-raised,
-    &.md-fab {
+    &.md-raised {
       color: '{{primary-contrast}}';
       background-color: '{{primary-color}}';
       &:not([disabled]) {
-        md-icon {
-          color: '{{primary-contrast}}';
-        }
         &:hover {
           background-color: '{{primary-color}}';
         }
         &.md-focused {
           background-color: '{{primary-600}}';
         }
-      }
-    }
-    &:not([disabled]) {
-      md-icon {
-        color: '{{primary-color}}';
-      }
-    }
-  }
-  &.md-fab {
-    border-radius: @button-fab-border-radius;
-    background-color: '{{accent-color}}';
-    color: '{{accent-contrast}}';
-    &:not([disabled]) {
-      .md-icon {
-        color: '{{accent-contrast}}';
-      }
-      &:hover {
-        background-color: '{{accent-color}}';
-      }
-      &.md-focused {
-        background-color: '{{accent-A700}}';
       }
     }
   }
@@ -99,8 +50,7 @@ a.md-button.md-THEME_NAME-theme,
   &.md-warn {
     color: '{{warn-color}}';
 
-    &.md-raised,
-    &.md-fab {
+    &.md-raised {
       color: '{{warn-contrast}}';
       background-color: '{{warn-color}}';
       &:not([disabled]) {
@@ -154,10 +104,6 @@ a.md-button.md-THEME_NAME-theme,
   &.md-warn[disabled] {
     color: '{{foreground-3}}';
     cursor: not-allowed;
-
-    md-icon {
-      color: '{{foreground-3}}';
-    }
   }
   &.md-raised[disabled],
   &.md-fab[disabled] {

@@ -36,7 +36,6 @@ function(SERVICES, COMPONENTS, DEMOS, PAGES, $routeProvider, $mdThemingProvider)
       templateUrl: 'partials/getting-started.tmpl.html'
     });
 
-
   $mdThemingProvider.definePalette('docs-blue', $mdThemingProvider.extendPalette('blue', {
       '50':   '#DCEFFF',
       '100':  '#AAD1F9',
