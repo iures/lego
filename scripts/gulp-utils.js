@@ -175,7 +175,7 @@ exports.buildNgMaterialDefinition = function() {
     buffer.push(file);
     next();
   }, function(done) {
-    var EXPLICIT_DEPS = ['ng', 'ngAria'];
+    var EXPLICIT_DEPS = ['ng', 'ngAnimate', 'ngAria'];
     var angularFileContents = "angular.module('ngMaterial', " + JSON.stringify(EXPLICIT_DEPS.concat(modulesSeen)) + ');';
     var angularFile = new gutil.File({
       base: process.cwd(),
@@ -238,11 +238,11 @@ exports.buildModuleBower = function(name, version) {
     if (moduleInfo.module) {
       var bowerDeps = {};
       (moduleInfo.dependencies || []).forEach(function(dep) {
-        var convertedName = 'crowdtap-ct-' + dep.split('.').pop();
+        var convertedName = 'angular-material-' + dep.split('.').pop();
         bowerDeps[convertedName] = version;
       });
       var bowerContents = JSON.stringify({
-        name: 'crowdtap-ct-' + name,
+        name: 'angular-material-' + name,
         version: version,
         dependencies: bowerDeps
       }, null, 2);
@@ -257,7 +257,7 @@ exports.buildModuleBower = function(name, version) {
   });
 };
 
-exports.hoistLessVariables = function() {
+exports.hoistScssVariables = function() {
   return through2.obj(function(file, enc, next) {
     var contents = file.contents.toString().split('\n');
     var lastVariableLine = -1;

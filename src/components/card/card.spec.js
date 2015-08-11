@@ -1,10 +1,16 @@
-describe('ct-card', function() {
+describe('mdCard directive', function() {
+
   beforeEach(module('material.components.card'));
 
-  it('should convert attributes on an ct-card to attributes on the generated card', inject(function($compile, $rootScope) {
-    var card = $compile('<ct-card hide hide-sm></ct-card>')($rootScope);
+  it('should have the default theme class when the md-theme attribute is not defined', inject(function($compile, $rootScope) {
+    var card = $compile('<md-card></md-card>')($rootScope.$new());
     $rootScope.$apply();
-    expect(button[0].hasAttribute('hide')).toBe(true);
-    expect(button[0].hasAttribute('hide-sm')).toBe(true);
+    expect(card.hasClass('md-default-theme')).toBe(true);
+  }));
+
+  it('should have the correct theme class when the md-theme attribute is defined', inject(function($compile, $rootScope) {
+    var card = $compile('<md-card md-theme="green"></md-card>')($rootScope.$new());
+    $rootScope.$apply();
+    expect(card.hasClass('md-green-theme')).toBe(true);
   }));
 });

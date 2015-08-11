@@ -13,11 +13,12 @@ module.exports = function(config) {
 
   dependencies = dependencies.concat([
     'node_modules/angular/angular.js',
+    'node_modules/angular-animate/angular-animate.js',
     'node_modules/angular-aria/angular-aria.js',
     'node_modules/angular-messages/angular-messages.js',
     'node_modules/angular-route/angular-route.js',
     'node_modules/angular-mocks/angular-mocks.js',
-    'dist/crowdtap-ct.js',
+    'dist/angular-material.js',
     'config/test-utils.js',
     'dist/docs/docs.js',
     'dist/docs/docs-demo-scripts.js'

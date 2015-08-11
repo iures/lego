@@ -79,7 +79,7 @@ quickly:
 
 * **Overview of the Issue** - if an error is being thrown, a non-minified stack trace helps.
 
-* **Angular Material Version** - check the header of your `crowdtap-ct.js` file to determine
+* **Angular Material Version** - check the header of your `angular-material.js` file to determine
                                  your specific version #.
 
 ```js

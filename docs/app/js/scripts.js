@@ -5,6 +5,7 @@
   function DemoAngularScripts(BUILDCONFIG) {
     var scripts = [
       'angular.js',
+      'angular-animate.min.js',
       'angular-route.min.js',
       'angular-aria.min.js',
       'angular-messages.min.js'

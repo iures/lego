@@ -13,7 +13,7 @@ var series = require('stream-series');
 var lazypipe = require('lazypipe');
 var glob = require('glob').sync;
 var uglify = require('gulp-uglify');
-var less = require('gulp-less');
+var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var ngAnnotate = require('gulp-ng-annotate');
 var minifyCss = require('gulp-minify-css');
@@ -51,7 +51,7 @@ function buildJs () {
       .pipe(utils.addJsWrapper(true));
 
   var jsProcess = series(jsBuildStream, themeBuildStream() )
-      .pipe(concat('crowdtap-ct.js'))
+      .pipe(concat('angular-material.js'))
       .pipe(BUILD_MODE.transform())
       .pipe(insert.prepend(config.banner))
       .pipe(gulp.dest(config.outputDir))
@@ -61,7 +61,7 @@ function buildJs () {
 
   return series(jsProcess, deployMaterialMocks());
 
-  // Deploy the `crowdtap-ct-mocks.js` file to the `dist` directory
+  // Deploy the `angular-material-mocks.js` file to the `dist` directory
   function deployMaterialMocks() {
     return gulp.src(config.mockFiles)
         .pipe(gulp.dest(config.outputDir));
@@ -76,7 +76,7 @@ function autoprefix () {
 
 function buildModule(module, isRelease) {
   if ( module.indexOf(".") < 0) {
-    module = "crowdtap.ct." + module;
+    module = "material.components." + module;
   }
   gutil.log('Building ' + module + (isRelease && ' minified' || '') + ' ...');
 
@@ -85,7 +85,7 @@ function buildModule(module, isRelease) {
 
   var stream = utils.filesForModule(module)
       .pipe(filterNonCodeFiles())
-      .pipe(gulpif('*.less', buildModuleStyles(name)))
+      .pipe(gulpif('*.scss', buildModuleStyles(name)))
       .pipe(gulpif('*.js', buildModuleJs(name)));
   if (module === 'material.core') {
     stream = splitStream(stream);
@@ -149,10 +149,10 @@ function buildModule(module, isRelease) {
 
     return lazypipe()
         .pipe(insert.prepend, baseStyles)
-        .pipe(gulpif, /theme.less/,
-            rename(name + '-default-theme.less'), concat(name + '.less')
-        )
-        .pipe(less)
+        .pipe(gulpif, /theme.scss/,
+        rename(name + '-default-theme.scss'), concat(name + '.scss')
+    )
+        .pipe(sass)
         .pipe(autoprefix)
     (); // invoke the returning fn to create our pipe
   }
@@ -162,7 +162,7 @@ function buildModule(module, isRelease) {
 function readModuleArg() {
   var module = args.c ? 'material.components.' + args.c : (args.module || args.m);
   if (!module) {
-    gutil.log('\nProvide a component argument via `-c`:',
+    gutil.log('\nProvide a compnent argument via `-c`:',
         '\nExample: -c toast');
     gutil.log('\nOr provide a module argument via `--module` or `-m`.',
         '\nExample: --module=material.components.toast or -m material.components.dialog');
@@ -179,10 +179,9 @@ function filterNonCodeFiles() {
 
 // builds the theming related css and provides it as a JS const for angular
 function themeBuildStream() {
-  return gulp.src( config.themeBaseFiles.concat(path.join(config.paths, '*-theme.less')) )
-      .pipe(concat('default-theme.less'))
-      .pipe(utils.hoistLessVariables())
-      .pipe(gulp.dest(config.outputDir))
-      .pipe(less())
+  return gulp.src( config.themeBaseFiles.concat(path.join(config.paths, '*-theme.scss')) )
+      .pipe(concat('default-theme.scss'))
+      .pipe(utils.hoistScssVariables())
+      .pipe(sass())
       .pipe(utils.cssToNgConstant('material.core', '$MD_THEME_CSS'));
 }

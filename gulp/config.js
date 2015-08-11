@@ -17,19 +17,22 @@ module.exports = {
     '!src/**/*.spec.js'
   ],
   mockFiles : [
-    'test/crowdtap-ct-mocks.js'
+    'test/angular-material-mocks.js'
   ],
   themeBaseFiles: [
-    'src/core/style/variables.less',
-    'src/core/style/mixins.less'
+    'src/core/style/variables.scss',
+    'src/core/style/mixins.scss'
   ],
-  lessBaseFiles: [
-    'src/core/style/color-palette.less',
-    'src/core/style/variables.less',
-    'src/core/style/mixins.less',
+  scssBaseFiles: [
+    'src/core/style/color-palette.scss',
+    'src/core/style/variables.scss',
+    'src/core/style/mixins.scss',
+    'src/core/style/structure.scss',
+    'src/core/style/typography.scss',
+    'src/core/style/layout.scss'
   ],
-  lessStandaloneFiles: [
-    'src/core/style/layout.less'
+  scssStandaloneFiles: [
+    'src/core/style/layout.scss'
   ],
   paths: 'src/{components,services}/**',
   outputDir: 'dist/',

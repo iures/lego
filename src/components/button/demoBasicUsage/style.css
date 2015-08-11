@@ -6,6 +6,9 @@ section {
   position: relative !important;
   padding-bottom: 10px;
 }
+md-content {
+  margin-right: 7px;
+}
 section .md-button {
   margin-top: 16px;
   margin-bottom: 16px;

@@ -15,8 +15,8 @@ All component modules are defined in:
 
           -- <component>.js
           -- <component>.spec.js
-          -- <component>.less
-          -- <component>-theme.less
+          -- <component>.scss
+          -- <component>-theme.scss
 
           -- /demo<name>
 

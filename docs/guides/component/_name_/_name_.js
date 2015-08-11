@@ -1,4 +1,6 @@
 (function() {
+'use strict';
+
 /**
  * @ngdoc module
  * @name material.components._name_list

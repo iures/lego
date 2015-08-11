@@ -110,7 +110,7 @@ gulp.task('docs-demo-scripts', ['demos'], function() {
 });
 
 gulp.task('docs-js-dependencies', ['build'], function() {
-  return gulp.src(['dist/crowdtap-ct.js','dist/crowdtap-ct.min.js'])
+  return gulp.src(['dist/angular-material.js','dist/angular-material.min.js'])
     .pipe(gulp.dest('dist/docs'));
 });
 
@@ -120,12 +120,12 @@ gulp.task('docs-js', ['docs-app', 'docs-html2js', 'demos', 'build', 'docs-js-dep
     'dist/docs/js/**/*.js'
   ])
     .pipe(concat('docs.js'))
-    // .pipe(gulpif(!argv.dev, uglify()))
+    .pipe(gulpif(!argv.dev, uglify()))
     .pipe(gulp.dest('dist/docs'));
 });
 
 gulp.task('docs-css-dependencies', ['build'], function() {
-                                                       return gulp.src(['dist/crowdtap-ct.css','dist/crowdtap-ct.min.css'])
+                                                       return gulp.src(['dist/angular-material.css','dist/angular-material.min.css'])
                                                        .pipe(gulp.dest('dist/docs'));
                                                        });
 
@@ -159,7 +159,7 @@ gulp.task('docs-karma', ['docs-js'], function(done) {
     };
 
     karma.start(karmaConfig, function(exitCode){
-       if (exitCode !== 0) {
+       if (exitCode != 0) {
          gutil.log(gutil.colors.red("Karma exited with the following exit code: " + exitCode));
          process.exit(exitCode);
        }
