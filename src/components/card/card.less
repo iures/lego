@@ -1,0 +1,40 @@
+@card-padding: 16px;
+
+ct-card {
+  box-sizing: border-box;
+  .ct-shadow-bottom-z-1;
+  display: flex;
+  flex-direction: column;
+  margin: @baseline-grid;
+}
+
+ct-card ct-card-content {
+  padding: @card-padding;
+}
+
+ct-card ct-card-footer {
+  padding: @card-padding;
+}
+
+.ct-card-image-wrapper {
+  position: relative;
+  height: 150px;
+}
+
+.ct-card-image {
+  background-position: 50% -44px;
+  background-size: cover;
+  display: block;
+  height: 150px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  ct-card {
+    border: 1px solid #fff;
+  }
+}

@@ -238,11 +238,11 @@ exports.buildModuleBower = function(name, version) {
     if (moduleInfo.module) {
       var bowerDeps = {};
       (moduleInfo.dependencies || []).forEach(function(dep) {
-        var convertedName = 'crowdtap-ct-' + dep.split('.').pop();
+        var convertedName = 'angular-material-' + dep.split('.').pop();
         bowerDeps[convertedName] = version;
       });
       var bowerContents = JSON.stringify({
-        name: 'crowdtap-ct-' + name,
+        name: 'angular-material-' + name,
         version: version,
         dependencies: bowerDeps
       }, null, 2);

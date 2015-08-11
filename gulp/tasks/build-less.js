@@ -14,7 +14,6 @@ var insert = require('gulp-insert');
 var gulpif = require('gulp-if');
 var args = util.args;
 var IS_DEV = require('../const').IS_DEV;
-var debug = require('gulp-debug');
 
 exports.task = function() {
   var modules   = args['modules'],

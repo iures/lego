@@ -7,7 +7,7 @@
  */
 angular
     .module('material.components.button', [ 'material.core' ])
-    .directive('mdButton', MdButtonDirective);
+    .directive('ctButton', MdButtonDirective);
 
 /**
  * @ngdoc directive
@@ -22,7 +22,7 @@ angular
  * If you supply a `href` or `ng-href` attribute, it will become an `<a>` element. Otherwise, it will
  * become a `<button>` element. As per the [Material Design specifications](http://www.google.com/design/spec/style/color.html#color-ui-color-application)
  * the FAB button background is filled with the accent color [by default]. The primary color palette may be used with
- * the `md-primary` class.
+ * the `ct-primary` class.
  *
  * @param {expression=} ng-disabled En/Disable based on the expression
  * @param {string=} aria-label Adds alternative text to button for accessibility, useful for icon buttons.
@@ -33,10 +33,10 @@ angular
  * Regular buttons:
  *
  * <hljs lang="html">
- *  <md-button> Flat Button </md-button>
- *  <md-button href="http://google.com"> Flat link </md-button>
- *  <md-button class="md-raised"> Raised Button </md-button>
- *  <md-button ng-disabled="true"> Disabled Button </md-button>
+ *  <ct-button> Flat Button </ct-button>
+ *  <ct-button href="http://google.com"> Flat link </ct-button>
+ *  <ct-button class="ct-raised"> Raised Button </ct-button>
+ *  <ct-button ng-disabled="true"> Disabled Button </ct-button>
  * </hljs>
  */
 function MdButtonDirective($mdTheming, $mdAria, $timeout) {
@@ -93,9 +93,8 @@ function MdButtonDirective($mdTheming, $mdAria, $timeout) {
         }, 100);
       })
       .on('focus', function() {
-        if(scope.mouseActive === false) { element.addClass('md-focused'); }
+        if(scope.mouseActive === false) { element.addClass('ct-focused'); }
       })
-      .on('blur', function() { element.removeClass('md-focused'); });
+      .on('blur', function() { element.removeClass('ct-focused'); });
   }
-
 }

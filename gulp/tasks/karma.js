@@ -36,7 +36,6 @@ exports.task = function (done) {
     };
   }
 
-
   if ( args.browsers ) {
     karmaConfig.browsers = args.browsers.trim().split(',');
   } else {

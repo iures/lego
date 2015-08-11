@@ -24,12 +24,6 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="#">Crowdtap</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -45,6 +39,15 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <div ng-repeat="section in menu.sections">
             <h2>{{section.name}}</h2>
+            <div ng-repeat="child in section.children">
+              <h2 style="margin-left: 10px;">{{child.name}}</h2>
+              <ul class="nav nav-sidebar" >
+                <li ng-repeat="page in section.pages">
+                  <a ng-href="page.url">{{ page.name }}</a>
+                  <!-- <menu-link section="page"></menu-link> -->
+                </li>
+              </ul>
+            </div>
             <ul class="nav nav-sidebar" >
               <li ng-repeat="child in section.pages">
                 <menu-link section="child"></menu-link>
@@ -65,7 +68,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../assets.shared.bs3.js"></script>
-    <script src="crowdtap-ct.min.js"></script>
+    <script src="crowdtap-ct.js"></script>
     <script src="docs.js"></script>
     <script src="docs-demo-scripts.js"></script>
   </body>
