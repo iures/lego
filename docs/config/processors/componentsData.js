@@ -14,7 +14,7 @@ function coreServiceData(doc, extraData) {
 }
 
 function buildDocData(doc, extraData, descriptor) {
-  var module = 'material.' + descriptor;
+  var module = 'ct.' + descriptor;
   var githubBaseUrl = buildConfig.repository + '/blob/master/src/' + descriptor + '/';
   var jsName = doc.module.split(module + '.').pop();
 
@@ -76,7 +76,7 @@ module.exports = function componentsGenerateProcessor(log, moduleMap) {
 
     var services = _(docs).filter(function(doc) {
       return doc.docType == 'service' &&
-        doc.module == 'material.core' &&
+        doc.module == 'ct.core' &&
         EXPOSED_CORE_SERVICES.indexOf(doc.name) != -1;
     }).map(coreServiceData).value();
 

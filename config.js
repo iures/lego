@@ -4,7 +4,7 @@ var VERSION = args.version || require('../package.json').version;
 module.exports = {
   banner:
   '/*!\n' +
-  ' * Crowdtap CT Design\n' +
+  ' * CT Design\n' +
   ' * https://github.com/angular/material\n' +
   ' * @license MIT\n' +
   ' * v' + VERSION + '\n' +
@@ -17,7 +17,7 @@ module.exports = {
     '!src/**/*.spec.js'
   ],
   mockFiles : [
-    'test/crowdtap-ct-mocks.js'
+    'test/ct-mocks.js'
   ],
   themeBaseFiles: [
     'src/core/style/variables.less',

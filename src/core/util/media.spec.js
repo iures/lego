@@ -9,7 +9,7 @@ describe('$mdMedia', function() {
     });
   }
 
-  beforeEach(module('material.core'));
+  beforeEach(module('ct.core'));
 
   beforeEach(inject(function($mdMedia, $window) {
     matchMediaResult = false;

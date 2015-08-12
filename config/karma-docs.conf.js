@@ -17,7 +17,7 @@ module.exports = function(config) {
     'node_modules/angular-messages/angular-messages.js',
     'node_modules/angular-route/angular-route.js',
     'node_modules/angular-mocks/angular-mocks.js',
-    'dist/crowdtap-ct.js',
+    'dist/ct.js',
     'config/test-utils.js',
     'dist/docs/docs.js',
     'dist/docs/docs-demo-scripts.js'

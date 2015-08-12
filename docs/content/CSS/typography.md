@@ -2,7 +2,7 @@
 @name Typography
 @description
 
-Crowdtap CT provides typography CSS classes you can use to create visual
+CT provides typography CSS classes you can use to create visual
 consistency across your application.
 
 [Reference the Material Design specification for Typography.](http://www.google.com/design/spec/style/typography.html)

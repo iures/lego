@@ -4,9 +4,9 @@ module.exports = function(config) {
   var UNCOMPILED_SRC = [
 
     // To enabled use of `gulp karma-watch`,
-    // don't use the dist/crowdtap-ct.js
+    // don't use the dist/ct.js
     //
-    //'dist/crowdtap-ct.js',   // Un-minified source
+    //'dist/ct.js',   // Un-minified source
 
 
     // Test utilities, source, and specifications.
@@ -14,7 +14,7 @@ module.exports = function(config) {
     // demos in the tests, and Karma doesn't support advanced
     // globbing.
 
-    'dist/crowdtap-ct.css',
+    'dist/ct.css',
 
     'src/core/**/*.js',
     'src/components/*/*.js',
@@ -24,8 +24,8 @@ module.exports = function(config) {
   ];
 
   var COMPILED_SRC = [
-    'dist/crowdtap-ct.min.css',
-    'dist/crowdtap-ct.min.js', // Minified source
+    'dist/ct.min.css',
+    'dist/ct.min.js', // Minified source
     'src/**/*.spec.js'
   ];
 
@@ -35,8 +35,8 @@ module.exports = function(config) {
     'node_modules/angular/angular.js',
     'node_modules/angular-aria/angular-aria.js',
     'node_modules/angular-mocks/angular-mocks.js',
-    'test/crowdtap-ct-mocks.js',
-    'test/crowdtap-ct-spec.js'
+    'test/ct-mocks.js',
+    'test/ct-spec.js'
   ];
 
   var testSrc = process.env.KARMA_TEST_COMPRESSED ? COMPILED_SRC : UNCOMPILED_SRC;

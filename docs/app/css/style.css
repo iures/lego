@@ -5,7 +5,7 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
-  background-color: #f9f9f9!important;
+  background-color: #f9f9f9;
 }
 
 
@@ -37,7 +37,6 @@ body {
 
 @media (min-width: 768px) {
   .sidebar {
-    background-color: #1eb0d5;
     border-right: 1px solid #eee;
     bottom: 0;
     display: block;
@@ -59,7 +58,6 @@ body {
 }
 
 .sidebar h2 {
-  color: rgba(255, 255, 255, 0.4);
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 20px;

@@ -1,5 +1,5 @@
 angular
-  .module('material.core')
+  .module('ct.core')
   .service('$mdCompiler', mdCompilerService);
 
 function mdCompilerService($q, $http, $injector, $compile, $controller, $templateCache) {
@@ -8,7 +8,7 @@ function mdCompilerService($q, $http, $injector, $compile, $controller, $templat
   /*
    * @ngdoc service
    * @name $mdCompiler
-   * @module material.core
+   * @module ct.core
    * @description
    * The $mdCompiler service is an abstraction of angular's compiler, that allows the developer
    * to easily compile an element with a templateUrl, controller, and locals.

@@ -19,7 +19,7 @@ exports.task = function() {
   var modules   = args['modules'],
       overrides = args['override'],
       dest      = args['output-dir'] || config.outputDir,
-      filename  = args['filename'] || 'crowdtap-ct',
+      filename  = args['filename'] || 'ct',
       paths     = getPaths();
   var streams = [];
   var baseVars = fs.readFileSync('src/core/style/variables.less', 'utf8').toString();
@@ -30,7 +30,7 @@ exports.task = function() {
     gulp.src(paths)
       .pipe(util.filterNonCodeFiles())
       .pipe(filter(['**', '!**/*-theme.less']))
-      .pipe(concat('crowdtap-ct.less'))
+      .pipe(concat('ct.less'))
       .pipe(gulp.dest(dest))
   );
 
@@ -38,7 +38,7 @@ exports.task = function() {
       gulp.src(paths)
           .pipe(util.filterNonCodeFiles())
           .pipe(filter(['**', '!**/*-theme.less']))
-          .pipe(concat('crowdtap-ct.less'))
+          .pipe(concat('ct.less'))
           .pipe(less())
           .pipe(rename({ basename: filename }))
           .pipe(util.autoprefix())
@@ -55,7 +55,7 @@ exports.task = function() {
           .pipe(less())
           .pipe(util.autoprefix())
           .pipe(insert.prepend(config.banner))
-          .pipe(rename({prefix: 'crowdtap-ct-'}))
+          .pipe(rename({prefix: 'ct-'}))
           .pipe(gulp.dest(path.join(dest, 'modules', 'css')))
   );
 

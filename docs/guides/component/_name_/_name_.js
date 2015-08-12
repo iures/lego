@@ -1,15 +1,15 @@
 (function() {
 /**
  * @ngdoc module
- * @name material.components._name_list
+ * @name ct.components._name_list
  */
-angular.module('material.components._name_list', ['material.core'])
+angular.module('ct.components._name_list', ['ct.core'])
        .directive('md_name_list', _name_listDirective);
 
 /**
  * @ngdoc directive
  * @name md_name_list
- * @module material.components._name_list
+ * @module ct.components._name_list
  * @restrict E
  * @description
  *

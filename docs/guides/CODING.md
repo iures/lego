@@ -39,8 +39,8 @@ Additionally, all component modules are compiled and deployed as a library to:
 
 ```text
  -- /dist
-    -- angular.material.js
-    -- angular.material.css
+    -- ct.js
+    -- ct.css
 ```
 
 > NOTE: the `dist` directory is **not** version controlled.
@@ -61,17 +61,17 @@ Below is a sample code that demonstrates some of our rules and conventions:
 
 /**
  * @ngdoc module
- * @name material.components.slider
+ * @name ct.components.slider
  */
-angular.module('material.components.slider', [
-  'material.core'
+angular.module('ct.components.slider', [
+  'ct.core'
 ])
   .directive('mdSlider', SliderDirective);
 
 /**
  * @ngdoc directive
  * @name mdSlider
- * @module material.components.slider
+ * @module ct.components.slider
  * @restrict E
  * @description
  * The `<md-slider>` component allows the user to choose from a range of values.
@@ -116,8 +116,8 @@ function SliderDirective($mdTheming) {
 *  With the exceptions listed in this document, follow the rules contained in
    [Google's JavaScript Style Guide](https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 *  All components must have unique, understandable module names; prefixed with
-   'material.components.'.
-*  All components must depend upon the 'material.core' module.
+   'ct.components.'.
+*  All components must depend upon the 'ct.core' module.
 *  Do not use `$inject` to annotate arguments.<br/>
    ngAnnotate is used as part of the build process to automatically create the annotations.
 *  All public API methods **must** be documented with ngdoc, an extended version of jsdoc (we added
@@ -164,4 +164,4 @@ function SliderDirective($mdTheming) {
 * To write concise code that can be better minified, we **use aliases internally** that map to the
   external API.
 * Use of argument **type annotations** for private internal APIs is not encouraged, unless it's an
-  internal API that is used throughout Crowdtap CT.
+  internal API that is used throughout ct.

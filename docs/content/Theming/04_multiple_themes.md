@@ -4,7 +4,7 @@
 
 In most applications, declaring multiple themes is **not** necessary. Instead,
 you should configure the `default` theme for your needs. If you need multiple
-themes in a single application, Crowdtap CT does provide tools
+themes in a single application, ct does provide tools
 to make this possible.
 
 ### Registering another theme
@@ -37,7 +37,7 @@ $mdThemingProvider.setDefaultTheme('altTheme');
 
 #### Via a Directive
 
-Crowdtap CT also exposes the `md-theme` directive which will set the theme
+ct also exposes the `md-theme` directive which will set the theme
 on an element and all child elements.
 
 In the following example, the application will use the `default` theme, while

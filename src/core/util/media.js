@@ -1,10 +1,10 @@
-angular.module('material.core')
+angular.module('ct.core')
 .factory('$mdMedia', mdMediaFactory);
 
 /**
  * @ngdoc service
  * @name $mdMedia
- * @module material.core
+ * @module ct.core
  *
  * @description
  * `$mdMedia` is used to evaluate whether a given media query is true or false given the

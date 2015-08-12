@@ -1,4 +1,4 @@
-angular.module('material.core')
+angular.module('ct.core')
 .factory('$mdConstant', MdConstantFactory);
 
 function MdConstantFactory($sniffer) {

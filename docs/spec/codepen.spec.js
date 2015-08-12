@@ -45,16 +45,16 @@ describe('CodepenDataAdapter', function() {
       it('includes the core angular css', function() {
 
         // NOTE: the release script replaces this localhost reference with
-        // 'https://gitcdn.xyz/repo/angular/bower-material/master/crowdtap-ct.css'
+        // 'https://gitcdn.xyz/repo/angular/bower-material/master/ct.css'
 
-        expect(data.css_external).toBe('http://localhost:8080/crowdtap-ct.css');
+        expect(data.css_external).toBe('http://localhost:8080/ct.css');
       });
 
       it('includes the external js files, including the asset cache required to serve svgs to codepen', function() {
 
         var expected = [
           'http://some-url-to-external-js-files-required-for-codepen',
-          'http://localhost:8080/crowdtap-ct.js',
+          'http://localhost:8080/ct.js',
           'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'
         ].join(';');
         expect(data.js_external).toBe(expected)

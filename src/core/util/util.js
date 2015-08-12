@@ -1,12 +1,12 @@
 /*
  * This var has to be outside the angular factory, otherwise when
- * there are multiple material apps on the same page, each app
+ * there are multiple ct apps on the same page, each app
  * will create its own instance of this array and the app's IDs
  * will not be unique.
  */
 var nextUniqueId = 0;
 
-angular.module('material.core')
+angular.module('ct.core')
   .factory('$mdUtil', function ($cacheFactory, $document, $timeout, $q, $compile, $window, $mdConstant, $$rAF, $rootScope) {
     var $mdUtil = {
           dom : { },
@@ -185,7 +185,7 @@ angular.module('material.core')
             var newEvent = document.createEvent('MouseEvents');
             newEvent.initMouseEvent('click', false, true, window, {}, 0, 0, 0, 0,
               false, false, false, false, 0, null);
-            newEvent.$material = true;
+            newEvent.$ct = true;
             newEvent.$focus = true;
             node.dispatchEvent(newEvent);
           },

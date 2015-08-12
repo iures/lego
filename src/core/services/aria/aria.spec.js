@@ -1,5 +1,5 @@
 describe('$mdAria service', function() {
-  beforeEach(module('material.core'));
+  beforeEach(module('ct.core'));
 
   describe('expecting attributes', function(){
     it('should warn if element is missing attribute', inject(function($compile, $rootScope, $log, $mdAria) {
@@ -41,8 +41,6 @@ describe('$mdAria service', function() {
       expect($log.warn).toHaveBeenCalled();
 
       button.remove();
-
     }));
   });
-
 });

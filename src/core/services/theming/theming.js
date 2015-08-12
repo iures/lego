@@ -1,4 +1,4 @@
-angular.module('material.core.theming', ['material.core.theming.palette'])
+angular.module('ct.core.theming', ['ct.core.theming.palette'])
   .directive('mdTheme', ThemingDirective)
   .directive('mdThemable', ThemableDirective)
   .provider('$mdTheming', ThemingProvider)
@@ -7,7 +7,7 @@ angular.module('material.core.theming', ['material.core.theming.palette'])
 /**
  * @ngdoc provider
  * @name $mdThemingProvider
- * @module material.core
+ * @module ct.core
  *
  * @description Provider to configure the `$mdTheming` service.
  */
@@ -518,7 +518,7 @@ function generateThemes($injector) {
 
         if (theme.colors.primary.name == theme.colors.accent.name) {
           console.warn("$mdThemingProvider: Using the same palette for primary and" +
-                       " accent. This violates the material design spec.");
+                       " accent. This violates the ct design spec.");
         }
 
         GENERATED[theme.name] = true;

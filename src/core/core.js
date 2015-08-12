@@ -4,7 +4,7 @@
  * requirements.
  */
 angular
-  .module('material.core', [ 'material.core.theming' ])
+  .module('ct.core', [ 'ct.core.theming' ])
   .config( MdCoreConfigure );
 
 

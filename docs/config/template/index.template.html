@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../assets.shared.bs3.css" rel="stylesheet">
-    <link href="crowdtap-ct.css" rel="stylesheet">
+    <link href="ct.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="docs.css">
@@ -38,21 +38,13 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <div ng-repeat="section in menu.sections">
-            <h2>{{section.name}}</h2>
-            <div ng-repeat="child in section.children">
-              <h2 style="margin-left: 10px;">{{child.name}}</h2>
-              <ul class="nav nav-sidebar" >
-                <li ng-repeat="page in section.pages">
-                  <a ng-href="page.url">{{ page.name }}</a>
-                  <!-- <menu-link section="page"></menu-link> -->
-                </li>
-              </ul>
-            </div>
-            <ul class="nav nav-sidebar" >
-              <li ng-repeat="child in section.pages">
-                <menu-link section="child"></menu-link>
-              </li>
-            </ul>
+            <h2 ng-if="section.type == 'heading'">{{section.name}}</h2>
+            <ct-sidenav title="child.name" ng-repeat="child in section.children">
+              <a ng-href="#{{page.url}}" ng-repeat="page in child.pages">{{ page.name }}</a>
+            </ct-sidenav>
+            <ct-sidenav title="section.name" ng-if="section.type == 'toggle'">
+              <a ng-href="#{{page.url}}" ng-repeat="page in section.pages">{{ page.name }}</a>
+            </ct-sidenav>
           </div>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" role="main">
@@ -68,7 +60,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../assets.shared.bs3.js"></script>
-    <script src="crowdtap-ct.js"></script>
+    <script src="ct.js"></script>
     <script src="docs.js"></script>
     <script src="docs-demo-scripts.js"></script>
   </body>

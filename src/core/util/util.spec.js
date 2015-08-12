@@ -1,5 +1,5 @@
 describe('util', function() {
-  beforeEach(module('material.core'));
+  beforeEach(module('ct.core'));
 
   var $rootScope, $timeout;
   beforeEach( inject(function(_$rootScope_,_$timeout_) {

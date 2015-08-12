@@ -1,5 +1,5 @@
 describe('$mdCompiler service', function() {
-  beforeEach(module('material.core'));
+  beforeEach(module('ct.core'));
 
   function compile(options) {
     var compileData;

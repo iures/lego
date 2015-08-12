@@ -1,5 +1,5 @@
 
-angular.module('material.core')
+angular.module('ct.core')
   .service('$mdAria', AriaService);
 
 /*

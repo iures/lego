@@ -1,4 +1,4 @@
-angular.module('material.core.theming.palette', [])
+angular.module('ct.core.theming.palette', [])
 .constant('$mdColorPalette', {
   'red': {
     '50': '#ffebee',

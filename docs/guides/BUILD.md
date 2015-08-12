@@ -13,7 +13,7 @@
 
 ## <a name="intro"></a> Introduction
 
-Crowdtap CT has a sophisticated collection of build process and commands available... to deploy
+ct has a sophisticated collection of build process and commands available... to deploy
 distribution files, test components, and more.
 
 These commands are defined within two (2) **gulp** files:
@@ -42,8 +42,8 @@ The following command line tasks are available:
 
 ###<a name="livedocs"></a> Building the Documentation
 
-The Crowdtap CT **Live Docs** are generated from the source code and demos and actually use the
-Crowdtap CT components and themes.
+The ct **Live Docs** are generated from the source code and demos and actually use the
+ct components and themes.
 
 > Our build process uses **[dgeni](https://github.com/angular/dgeni)**, the wonderful documentation
   generator built by [Pete Bacon Darwin](https://github.com/petebacondarwin).
@@ -52,11 +52,11 @@ See the [Building the Live Documentation](../README.md#docs) document for detail
 
 ###<a name="builds"></a> Building the Library
 
-Developers can build the entire Crowdtap CT library or individual component modules. The
+Developers can build the entire ct library or individual component modules. The
 library comprises:
 
-* `crowdtap-ct.js` - components
-* `crowdtap-ct.css` - styles and default theme stylesheet
+* `ct.js` - components
+* `ct.css` - styles and default theme stylesheet
 * `/themes/**.css` - default theme override stylesheets
 
 To build from the source, simply use:
@@ -64,16 +64,16 @@ To build from the source, simply use:
 ```bash
 # Build and deploy the library to
 #
-# - `dist/crowdtap-ct.js`
-# - `dist/crowdtap-ct.css`
+# - `dist/ct.js`
+# - `dist/ct.css`
 # - `dist/themes`
 
 gulp build
 
 # Build minified assets
 #
-# - `dist/crowdtap-ct.min.js`
-# - `dist/crowdtap-ct.min.css`
+# - `dist/ct.min.js`
+# - `dist/ct.min.css`
 # - `dist/themes`
 
 gulp build --release
@@ -81,33 +81,33 @@ gulp build --release
 
 ###<a name="bower"></a> Using the Library with Bower
 
-For developers not interested in building the Crowdtap CT library, use **bower** to install and
-use the Crowdtap CT distribution files.
+For developers not interested in building the ct library, use **bower** to install and
+use the ct distribution files.
 
 Change to your project's root directory.
 
 ```bash
 # To get the latest stable version, use Bower from the command line.
-bower install crowdtap-ct
+bower install ct
 
 # To get the most recent, latest committed-to-master version use:
-bower install crowdtap-ct#master
+bower install ct#master
 ```
 
 Visit [Bower-Material](https://github.com/angular/bower-material/blob/master/README.md) for more
-details on how to install and use the Crowdtap CT distribution files within your own local
+details on how to install and use the ct distribution files within your own local
 project.
 
 <br/>
 ##<a name="comp"></a> Introducing Components
 
-Crowdtap CT supports the construction and deployment of individual component builds. Within
-Crowdtap CT, each component is contained within its own module and specifies its own
+ct supports the construction and deployment of individual component builds. Within
+ct, each component is contained within its own module and specifies its own
 dependencies.
 
 > At a minimum, all components have a dependency upon the `core` module.
 
-For example, the **slider** component is registered as a **material.components.slider** module.
+For example, the **slider** component is registered as a **ct.components.slider** module.
 
 ###<a name="comp_builds"></a> Building Individual Components
 
@@ -133,10 +133,10 @@ Let's consider the Slider component with its module definition:
 ```js
 /**
  * @ngdoc module
- * @name material.components.slider
+ * @name ct.components.slider
  */
-angular.module('material.components.slider', [
-  'material.core'
+angular.module('ct.components.slider', [
+  'ct.core'
 ]);
 ```
 

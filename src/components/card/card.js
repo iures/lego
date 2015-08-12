@@ -1,12 +1,12 @@
 /**
  * @ngdoc module
- * @name material.components.card
+ * @name ct.components.card
  *
  * @description
  * Card components.
  */
-angular.module('material.components.card', [
-  'material.core'
+angular.module('ct.components.card', [
+  'ct.core'
 ])
   .directive('ctCard', ctCardDirective);
 
@@ -15,7 +15,7 @@ angular.module('material.components.card', [
 /**
  * @ngdoc directive
  * @name mdCard
- * @module material.components.card
+ * @module ct.components.card
  *
  * @restrict E
  *

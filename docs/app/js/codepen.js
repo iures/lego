@@ -48,8 +48,8 @@
   // additional fields not used by this service. http://blog.codepen.io/documentation/api/prefill
   function CodepenDataAdapter() {
 
-    var CORE_JS = 'http://localhost:8080/crowdtap-ct.js';
-    var CORE_CSS = 'http://localhost:8080/crowdtap-ct.css';
+    var CORE_JS = 'http://localhost:8080/ct.js';
+    var CORE_CSS = 'http://localhost:8080/ct.css';
     var ASSET_CACHE_JS = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js';
 
     return {
