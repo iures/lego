@@ -67,8 +67,6 @@ function ctCardDirective($mdTheming, $compile) {
   return {
     restrict: 'E',
     link: function($scope, $element, $attr) {
-      $mdTheming($element);
-
       //use style background-image instead of img src
       var currentImg = $('.ct-card-image', $element);
       var imgSrc = currentImg.attr('ng-src');
@@ -78,6 +76,8 @@ function ctCardDirective($mdTheming, $compile) {
         "</div>"
       );
       currentImg.replaceWith($compile(wrappedImg)($scope));
+
+      $mdTheming($element);
     }
   };
 }

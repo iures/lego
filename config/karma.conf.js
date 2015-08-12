@@ -25,18 +25,19 @@ module.exports = function(config) {
 
   var COMPILED_SRC = [
     'dist/crowdtap-ct.min.css',
-    'dist/crowdtap-ct.min.js',   // Minified source
+    'dist/crowdtap-ct.min.js', // Minified source
     'src/**/*.spec.js'
   ];
 
-  var dependencies = process.env.KARMA_TEST_JQUERY ? ['node_modules/jquery/dist/jquery.js'] : [];
-      dependencies = dependencies.concat([
-        'node_modules/angular/angular.js',
-        'node_modules/angular-aria/angular-aria.js',
-        'node_modules/angular-mocks/angular-mocks.js',
-        'test/crowdtap-ct-mocks.js',
-        'test/crowdtap-ct-spec.js'
-      ]);
+  var dependencies = [
+    'node_modules/jquery/dist/jquery.js',
+    'dist/assets.shared.bs3.js',
+    'node_modules/angular/angular.js',
+    'node_modules/angular-aria/angular-aria.js',
+    'node_modules/angular-mocks/angular-mocks.js',
+    'test/crowdtap-ct-mocks.js',
+    'test/crowdtap-ct-spec.js'
+  ];
 
   var testSrc = process.env.KARMA_TEST_COMPRESSED ? COMPILED_SRC : UNCOMPILED_SRC;
 

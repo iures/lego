@@ -4,7 +4,7 @@
  *
  * Developers interested in running their own custom unit tests WITH angular-material.js loaded...
  * must also include this *mocks* file. Similar to `angular-mocks.js`, `angular-material-mocks.js`
- * will override and disable specific Angular Material performance settings:
+ * will override and disable specific Crowdtap CT performance settings:
  *
  *  - Disabled Theme CSS rule generations
  *  - Forces $mdAria.expectWithText() to be synchronous
@@ -30,7 +30,7 @@ angular.module('ngMaterial-mock', ['ngMock', 'material.core'])
        .config(['$provide', function($provide) {
 
     /**
-      * Angular Material dynamically generates Style tags
+      * Crowdtap CT dynamically generates Style tags
       * based on themes and palletes; for each ng-app.
       *
       * For testing, we want to disable generation and

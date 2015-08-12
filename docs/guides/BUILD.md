@@ -13,7 +13,7 @@
 
 ## <a name="intro"></a> Introduction
 
-Angular Material has a sophisticated collection of build process and commands available... to deploy
+Crowdtap CT has a sophisticated collection of build process and commands available... to deploy
 distribution files, test components, and more.
 
 These commands are defined within two (2) **gulp** files:
@@ -42,8 +42,8 @@ The following command line tasks are available:
 
 ###<a name="livedocs"></a> Building the Documentation
 
-The Angular Material **Live Docs** are generated from the source code and demos and actually use the
-Angular Material components and themes.
+The Crowdtap CT **Live Docs** are generated from the source code and demos and actually use the
+Crowdtap CT components and themes.
 
 > Our build process uses **[dgeni](https://github.com/angular/dgeni)**, the wonderful documentation
   generator built by [Pete Bacon Darwin](https://github.com/petebacondarwin).
@@ -52,7 +52,7 @@ See the [Building the Live Documentation](../README.md#docs) document for detail
 
 ###<a name="builds"></a> Building the Library
 
-Developers can build the entire Angular Material library or individual component modules. The
+Developers can build the entire Crowdtap CT library or individual component modules. The
 library comprises:
 
 * `crowdtap-ct.js` - components
@@ -81,8 +81,8 @@ gulp build --release
 
 ###<a name="bower"></a> Using the Library with Bower
 
-For developers not interested in building the Angular Material library, use **bower** to install and
-use the Angular Material distribution files.
+For developers not interested in building the Crowdtap CT library, use **bower** to install and
+use the Crowdtap CT distribution files.
 
 Change to your project's root directory.
 
@@ -95,14 +95,14 @@ bower install crowdtap-ct#master
 ```
 
 Visit [Bower-Material](https://github.com/angular/bower-material/blob/master/README.md) for more
-details on how to install and use the Angular Material distribution files within your own local
+details on how to install and use the Crowdtap CT distribution files within your own local
 project.
 
 <br/>
 ##<a name="comp"></a> Introducing Components
 
-Angular Material supports the construction and deployment of individual component builds. Within
-Angular Material, each component is contained within its own module and specifies its own
+Crowdtap CT supports the construction and deployment of individual component builds. Within
+Crowdtap CT, each component is contained within its own module and specifies its own
 dependencies.
 
 > At a minimum, all components have a dependency upon the `core` module.

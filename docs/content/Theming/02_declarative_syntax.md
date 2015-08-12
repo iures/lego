@@ -3,7 +3,7 @@
 @description
 
 Theming in angular material uses classes to apply an intention group to a given
-component. Most components in Angular Material support intention classes 
+component. Most components in Crowdtap CT support intention classes 
 as expected, including:
 
 - md-button

@@ -4,7 +4,7 @@ var VERSION = args.version || require('../package.json').version;
 module.exports = {
   banner:
   '/*!\n' +
-  ' * Angular Material Design\n' +
+  ' * Crowdtap CT Design\n' +
   ' * https://github.com/angular/material\n' +
   ' * @license MIT\n' +
   ' * v' + VERSION + '\n' +
@@ -35,5 +35,3 @@ module.exports = {
   outputDir: 'dist/',
   demoFolder: 'demo-partials'
 };
-
-

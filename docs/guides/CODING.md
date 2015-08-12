@@ -164,4 +164,4 @@ function SliderDirective($mdTheming) {
 * To write concise code that can be better minified, we **use aliases internally** that map to the
   external API.
 * Use of argument **type annotations** for private internal APIs is not encouraged, unless it's an
-  internal API that is used throughout Angular Material.
+  internal API that is used throughout Crowdtap CT.

@@ -1,8 +1,8 @@
 Documentation
 -------------
 
-The Angular Material **Live Docs** are generated from the source code and demos; and, in fact, the
-Live Docs actually use the Angular Material components and themes.
+The Crowdtap CT **Live Docs** are generated from the source code and demos; and, in fact, the
+Live Docs actually use the Crowdtap CT components and themes.
 
 > Our build process uses **[dgeni](https://github.com/angular/dgeni)**, the wonderful documentation
 generator built by [Pete Bacon Darwin](https://github.com/petebacondarwin).

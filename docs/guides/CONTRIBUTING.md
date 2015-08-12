@@ -1,4 +1,4 @@
-# Contributing to Angular Material
+# Contributing to Crowdtap CT
 
  - [Code of Conduct](#coc)
  - [Signing the CLA](#cla)<br/><br/>
@@ -16,8 +16,8 @@ Please read and follow our
 <br/>
 ## <a name="question"></a> Have a Question, Problem, or Idea?
 
-If you have questions or ideas regarding Angular Material, please direct these to the
-[Angular Material Forum](https://groups.google.com/forum/#!forum/ngmaterial).
+If you have questions or ideas regarding Crowdtap CT, please direct these to the
+[Crowdtap CT Forum](https://groups.google.com/forum/#!forum/ngmaterial).
 
 Otherwise, do you:
 
@@ -43,7 +43,7 @@ You can request a new feature by
 implement a new feature then consider what kind of change it is:
 
 * **Major Changes** that you wish to contribute to the project should be discussed first on our
-  [Angular Material Forum](https://groups.google.com/forum/#!forum/ngmaterial), so that we can better
+  [Crowdtap CT Forum](https://groups.google.com/forum/#!forum/ngmaterial), so that we can better
   coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is
   successfully accepted into the project.
 * **Small Changes** can be crafted and submitted to the
@@ -79,12 +79,12 @@ quickly:
 
 * **Overview of the Issue** - if an error is being thrown, a non-minified stack trace helps.
 
-* **Angular Material Version** - check the header of your `crowdtap-ct.js` file to determine
+* **Crowdtap CT Version** - check the header of your `crowdtap-ct.js` file to determine
                                  your specific version #.
 
 ```js
 /*!
- * Angular Material Design
+ * Crowdtap CT Design
  * https://github.com/angular/material
  * @license MIT
  * v0.6.0-rc1-master-57f10f7
@@ -103,13 +103,13 @@ Here are two examples of well-defined issues:
 #### <a name="submitpr"></a>Submitting Pull Requests
 
 **Important**: With the exception of minor bugs and doc fixes, we are not actively reviewing
-unsolicited PRs to Angular Material.
+unsolicited PRs to Crowdtap CT.
 
 Please check with us via [the discussion forum](https://groups.google.com/forum/#!forum/ngmaterial)
 before investing significant effort in any pre-1.0 PR contribution; it's likely that we are already
 working on a related PR.
 
-* All contributions must be consistent with the Angular Material coding conventions. See the
+* All contributions must be consistent with the Crowdtap CT coding conventions. See the
   [Coding Guidelines](CODING.md)
 * Submit proposed changes or additions as GitHub pull requests. See the
   [Pull Request Guidelines](PULL_REQUESTS.md)
@@ -119,7 +119,7 @@ working on a related PR.
 
 We have very precise rules over how our git commit messages can be formatted. This leads to **more
 readable messages** that are easy to follow when looking through the **project history**. It is
-important to note that we use the git commit messages to **generate** the Angular Material
+important to note that we use the git commit messages to **generate** the Crowdtap CT
 [Changelog](../../CHANGELOG.md) document.
 
 > A detailed explanation of guidelines and conventions can be found in this
