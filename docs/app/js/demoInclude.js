@@ -89,7 +89,7 @@ function($q, $http, $compile, $templateCache, $timeout) {
      *
      * For example, make it so the dialog demo can reference templateUrl
      * 'my-dialog.tmpl.html' instead of having to reference the url
-     * 'generated/material.components.dialog/demo/demo1/my-dialog.tmpl.html'.
+     * 'generated/ct.components.dialog/demo/demo1/my-dialog.tmpl.html'.
      */
     function handleDemoTemplates() {
       return $q.all(files.html.map(function(file) {
@@ -104,11 +104,7 @@ function($q, $http, $compile, $templateCache, $timeout) {
           });
 
         });
-
       }));
-
     }
-
   }
-
 }]);

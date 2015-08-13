@@ -1,6 +1,6 @@
 describe('mdCard directive', function() {
 
-  beforeEach(module('material.components.card'));
+  beforeEach(module('ct.components.card'));
 
   it('should have the default theme class when the ct-theme attribute is not defined', inject(function($compile, $rootScope) {
     var card = $compile('<ct-card></ct-card>')($rootScope.$new());

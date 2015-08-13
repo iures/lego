@@ -31,10 +31,10 @@
   beforeEach(function() {
 
     /**
-     * Before each test, require that the 'ngMaterial-mock' module is ready for injection
+     * Before each test, require that the 'ct-mock' module is ready for injection
      * NOTE: assumes that angular-material-mocks.js has been loaded.
      */
-    module('ngMaterial-mock');
+    module('ct-mock');
 
     /**
      * Mocks angular.element#focus ONLY for the duration of a particular test.

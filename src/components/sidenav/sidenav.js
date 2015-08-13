@@ -14,7 +14,7 @@ angular.module('ct.components.sidenav', [
 /**
  * @ngdoc directive
  * @name mdSidenav
- * @module material.components.sidenav
+ * @module ct.components.sidenav
  * @restrict E
  *
  * @description
@@ -41,7 +41,7 @@ function SidenavDirective($mdTheming, $compile) {
  * @private
  * @ngdoc controller
  * @name SidenavController
- * @module material.components.sidenav
+ * @module ct.components.sidenav
  *
  */
 function SidenavController($scope, $element) {

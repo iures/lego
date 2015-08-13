@@ -1,6 +1,6 @@
 describe('ct-button', function() {
 
-  beforeEach(module('material.components.button'));
+  beforeEach(module('ct.components.button'));
 
   it('should convert attributes on an ct-button to attributes on the generated button', inject(function($compile, $rootScope) {
     var button = $compile('<ct-button hide hide-sm></ct-button>')($rootScope);
